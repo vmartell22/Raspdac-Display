@@ -85,7 +85,7 @@ PAGES_Play = {
       },
       {
         'name':"Title",
-        'duration':10,
+        'duration':15,
 		'hidewhenempty':'any',
         'hidewhenemptyvars': [ "title" ],
         'lines': [
@@ -93,6 +93,45 @@ PAGES_Play = {
             'name':"top",
             'variables': [ "title" ],
             'format':"{0}",
+            'justification':"left",
+            'scroll':True
+          },
+          {
+            'name':"bottom",
+            'variables': [ "playlist_display", "position" ],
+            'format':"{0} {1}",
+            'justification':"left",
+            'scroll':True
+          }
+        ]
+      },
+      {
+        'name':"Blank",
+        'duration':0.25,
+        'lines': [
+          {
+            'name':"top",
+            'format':"",
+          },
+          {
+            'name':"bottom",
+            'variables': [ "playlist_display", "position" ],
+            'format':"{0} {1}",
+            'justification':"left",
+            'scroll':False
+          }
+        ]
+      },
+      {
+        'name':"Audio",
+        'duration':15,
+		'hidewhenempty':'any',
+        'hidewhenemptyvars': [ "type", "bitrate" ],
+        'lines': [
+          {
+            'name':"top",
+            'variables': [ "type", "bitrate" ],
+            'format':"{0} [{1}]",
             'justification':"left",
             'scroll':True
           },
@@ -122,6 +161,7 @@ PAGES_Play = {
           }
         ]
       }
+
     ]
 }
 
@@ -136,9 +176,9 @@ PAGES_Stop = {
           {
             'name':"top",
             'variables': [ ],
-            'format':"Ready",
+            'format':"Martell Audiophile Systems T-3000",
             'justification':"center",
-            'scroll':False
+            'scroll':True
           },
           {
             'name':"bottom",

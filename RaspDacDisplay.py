@@ -29,7 +29,7 @@ import sys
 # import page definitions from pages.py
 import pages
 
-STARTUP_MSG = "Raspdac\nStarting"
+STARTUP_MSG = "MAS T-3000\nStarting"
 
 HESITATION_TIME = 2.5 # Amount of time in seconds to hesistate before scrolling
 ANIMATION_SMOOTHING = .15 # Amount of time in seconds before repainting display
@@ -53,7 +53,7 @@ STATUSLOGFILE='/var/log/RaspDacDisplayStatus.log'
 STATUSLOGGING = False
 
 # Adjust this setting to localize the time display to your region
-TIMEZONE="US/Eastern"
+TIMEZONE="US/Pacific"
 TIME24HOUR=False
 #TIMEZONE="Europe/Paris"
 
@@ -67,11 +67,11 @@ LOGLEVEL=logging.DEBUG
 #Configure which music services to monitor
 # For Volumio and RuneAudio MPD and SPOP should be enabled and LMS disabled
 # for Max2Play if you are using the Logitech Music Service, then LMS should be enabled
-MPD_ENABLED = False
+MPD_ENABLED = True
 MPD_SERVER = "localhost"
 MPD_PORT = 6600
 
-SPOP_ENABLED = False
+SPOP_ENABLED = True
 SPOP_SERVER = "localhost"
 SPOP_PORT = 6602
 
@@ -860,7 +860,7 @@ if __name__ == '__main__':
 
 	sys.excepthook = handleuncaughtexceptions
 
-	logging.info("Raspdac display starting...")
+	logging.info("MAS T-3000 Display Starting...")
 
 	# Suppress MPD libraries INFO messages
 	loggingMPD = logging.getLogger("mpd")
@@ -1257,8 +1257,8 @@ if __name__ == '__main__':
 		pass
 
 	finally:
-		dq.put(["Goodbye!",""])
-		logging.info("Raspdac display shutting down")
+		dq.put(["MAS T-3000 Shutting Down!",""])
+		logging.info("MAS T-3000 Display shutting down")
 		try:
 			rd.client.disconnect()
 		except:
