@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import Winstar_GraphicOLED
 import moment
 import time
@@ -13,6 +16,10 @@ from pylms import player
 import telnetlib
 from socket import error as socket_error
 import traceback
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 
 try:
 	import RPi.GPIO as GPIO
